@@ -1,0 +1,70 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.body{
+    margin: 0;
+}
+.clockBody{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: lightblue;
+    border: 50px solid gray;
+    border-radius: 50%;
+}
+.centerDot{
+    position: absolute;
+    width: 7%;
+    height: 7%;
+    background-color: black;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+}
+.hand{
+    position: absolute;
+    height: 4%;
+    top: 50%;
+
+    border-radius: 50% 0% 0% 50%;
+
+    transform-origin: 100%;
+}
+.hourHand{
+    left: 20%;
+    width: 30%;
+    background-color: black;
+
+}
+.minHand{
+    left: 10%;
+    width: 40%;
+    background-color: green;
+
+}
+.secHand{
+    left: 0;
+    width: 50%;
+    background-color: red;
+
+}
+.tick{
+    position: absolute;
+    background-color: black;
+
+    transform-origin: 0;
+    transform: translate(-50%, -50%);
+}
+.minTick{
+    width: 5%;
+    height: 3%;
+}
+.secTick{
+    width: 3%;
+    height: 1%;
+}
