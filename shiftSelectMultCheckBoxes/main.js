@@ -36,8 +36,6 @@ class CheckBoxSelector{
     }
 
     clickCheckbox(eventObj){
-        console.log(eventObj);
-
         if(!this.firstClickedCheckBox) {
             this.firstClickedCheckBox = eventObj.target;
         }else if(this.shiftIsDown){
@@ -48,34 +46,27 @@ class CheckBoxSelector{
     }
 
     shiftDown(){
-        console.log('pressed shift down')
         this.shiftIsDown = true;
 
         if (this.firstClickedCheckBox && this.lastClickedCheckBox) {
             //find index of clicks
-            var firstClickIndex=null;
-            var lastClickIndex=null;
-            firstClickIndex = this.arrayOfChecks.toArray().indexOf(this.firstClickedCheckBox);
-            lastClickIndex = this.arrayOfChecks.toArray().indexOf(this.lastClickedCheckBox);
+            var firstClickIndex = this.arrayOfChecks.toArray().indexOf(this.firstClickedCheckBox);
+            var lastClickIndex = this.arrayOfChecks.toArray().indexOf(this.lastClickedCheckBox);
 
             //order them
             if(firstClickIndex > lastClickIndex){
-                fir
+                var temp=firstClickIndex;
+                firstClickIndex=lastClickIndex;
+                lastClickIndex=temp;
             }
 
-            for(var checkboxIndex=0; checkboxIndex<this.arrayOfChecks.length; checkboxIndex++){
-                // start with lower one
-
-
-                // select all checks from one to the other
-
+            for(var index=firstClickIndex; index<lastClickIndex; index++){
+                this.arrayOfChecks[index].checked=true;
             }
         }
     }
     shiftUp(){
-        console.log('let go of shift')
-
-        this.firstClickedCheckBox=null;
+        // this.firstClickedCheckBox=null;
         this.lastClickedCheckBox=null;
         this.shiftIsDown=false;
     }
